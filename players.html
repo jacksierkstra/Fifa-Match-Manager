@@ -32,33 +32,39 @@
         <p>On this page, you can see a summary of all the players you've added. You can either add or delete players here.</p>
       </div>
 
-      <form class="form-inline" id="addPlayerForm">
-        <div class="form-group">
-          <label class="sr-only" for="exampleInputAmount">Name player</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="playerName" name="playerName" placeholder="Full name" />
+      <div class="panel panel-default">
+          <div class="panel-body">
+        <form class="form-inline" id="addPlayerForm">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount">Name player</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="playerName" name="playerName" placeholder="Full name" />
+            </div>
           </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Add player</button>
-        <button id="removeAllPlayers" type="submit" class="btn btn-danger">Remove all players</button>
-      </form>
+          <button type="submit" class="btn btn-primary">Add player</button>
+          <button id="removeAllPlayers" type="submit" class="btn btn-danger">Remove all players</button>
+        </form>
+      </div>
+      </div>
 
+          <div class="panel panel-default">
+              <div class="panel-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Full name</th>
+                      <th>Matches played</th>
+                      <th>Matches won</th>
+                      <th>Remove</th>
+                    </tr>
+                  </thead>
+                  <tbody>
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Full name</th>
-            <th>Matches played</th>
-            <th>Matches won</th>
-            <th>Remove</th>
-          </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
-
+                  </tbody>
+                </table>
+            </div>
+          </div>
     </div>
   </body>
 
