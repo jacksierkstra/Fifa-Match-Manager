@@ -33,7 +33,7 @@ function removeAllPlayers() {
   store.set('players', []);
 }
 
-function updateTable(table)
+function updatePlayersTable(table)
 {
 
   var players = getPlayers();
@@ -61,6 +61,10 @@ function updateTable(table)
 
 }
 
-function initPlayers() {
-  
+function initPlayers(dropdown1, dropdown2) {
+  var players = getPlayers();
+  $.each(players, function() {
+      dropdown1.append($('<option>').text(this.playerName).attr('value', this.id));
+      dropdown2.append($('<option>').text(this.playerName).attr('value', this.id));
+  });
 }

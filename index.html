@@ -37,7 +37,7 @@
 
       <div class="panel panel-default">
           <div class="panel-body">
-            <form class="form-horizontal">
+            <form class="form-horizontal" id="addMatchForm">
 
 
                 <div class="col-md-5">
@@ -73,7 +73,7 @@
 
                 <div class="col-md-2">
                   <h1 class="text-center">VS</h1>
-                  <button type="button" id="addMatch" class="btn btn-xs btn-primary">Add match</button>
+                  <button type="submit" id="addMatch" class="btn btn-xs btn-primary">Add match</button>
                   <button type="button" id="resetForm" class="btn btn-xs btn-default">Reset form</button>
                 </div>
 
@@ -121,11 +121,13 @@
       <table class="table">
         <thead>
           <tr>
+            <th>ID</th>
             <th>Home team</th>
             <th>Away team</th>
             <th>Home score</th>
             <th>Away score</th>
             <th>Player won</th>
+            <th>Remove</th>
           </tr>
         </thead>
         <tbody>
@@ -150,14 +152,20 @@
 
     $(function() {
 
-      var players = getPlayers();
+      initPlayers($('#selectHomeTeam'), $('#selectAwayTeam'));
+      updateMatchTable($('table'));
 
-      $.each(players, function() {
-          $('#selectHomeTeam').append($('<option>').text(this.playerName).attr('value', this.id));
-          $('#selectAwayTeam').append($('<option>').text(this.playerName).attr('value', this.id));
+      $( "form#addMatchForm" ).submit(function( event ) {
+          addMatch($(this).serializeObject());
+          updateMatchTable($('table'));
+          event.preventDefault();
+          event.stopPropagation();
       });
 
-      // $('#selectHomeTeam').chained('#selectAwayTeam');
+      $('button.remove-match').on('click', function(event) {
+          removeMatch(event.target.id);
+          updateMatchTable($('table'));
+      });
 
 
     });

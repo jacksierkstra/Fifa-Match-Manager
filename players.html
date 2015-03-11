@@ -74,24 +74,24 @@
 
     $(function() {
 
-      updateTable($('table'));
+      updatePlayersTable($('table'));
 
       $('button#removeAllPlayers').on('click', function() {
         removeAllPlayers();
-        updateTable($('table'));
+        updatePlayersTable($('table'));
       });
 
 
       $( "form#addPlayerForm" ).submit(function( event ) {
           addPlayer( $(this).serializeObject() );
-          updateTable($('table'));
+          updatePlayersTable($('table'));
           event.preventDefault();
           event.stopPropagation();
       });
 
       $('button.remove-player').on('click', function(event) {
           removePlayer(event.target.id);
-          updateTable($('table'));
+          updatePlayersTable($('table'));
       });
 
 
