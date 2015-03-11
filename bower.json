@@ -1,0 +1,29 @@
+{
+  "name": "Fifa match manager",
+  "version": "0.1",
+  "authors": [
+    "Jack Sierkstra <jacksierkstra@gmail.com>"
+  ],
+  "description": "A manager that uses local storage to keep track of the matches you play against friends",
+  "main": "index.html",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "fifa",
+    "manager"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "store.js": "~1.3.17",
+    "chained": "~1.0.0"
+  }
+}

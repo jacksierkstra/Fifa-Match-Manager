@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <title>Fifa manager</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <style media="screen">
+      body {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Fifa manager</a>
+          </div>
+           <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">Home</a></li>
+              <li class="active"><a href="">Players</a></li>
+           </ul>
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Summary of players</h1>
+        <p>On this page, you can see a summary of all the players you've added. You can either add or delete players here.</p>
+      </div>
+
+      <form class="form-inline" id="addPlayerForm">
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputAmount">Name player</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="playerName" name="playerName" placeholder="Full name" />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add player</button>
+        <button id="removeAllPlayers" type="submit" class="btn btn-danger">Remove all players</button>
+      </form>
+
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Full name</th>
+            <th>Matches played</th>
+            <th>Matches won</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+
+    </div>
+  </body>
+
+  <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="bower_components/store.js/store.min.js" charset="utf-8"></script>
+  <script src="js/tools.js" charset="utf-8"></script>
+  <script src="js/players.js" charset="utf-8"></script>
+
+  <script>
+
+    initStoreJs();
+
+    $(function() {
+
+      updateTable($('table'));
+
+      $('button#removeAllPlayers').on('click', function() {
+        removeAllPlayers();
+        updateTable($('table'));
+      });
+
+
+      $( "form#addPlayerForm" ).submit(function( event ) {
+          addPlayer( $(this).serializeObject() );
+          updateTable($('table'));
+          event.preventDefault();
+          event.stopPropagation();
+      });
+
+      $('button.remove-player').on('click', function(event) {
+          removePlayer(event.target.id);
+          updateTable($('table'));
+      });
+
+
+    });
+
+   </script>
+
+</html>
