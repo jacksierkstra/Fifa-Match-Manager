@@ -13,6 +13,10 @@ function addPlayer(player) {
 }
 
 function getPlayers() {
+  var players = store.get('players') ? store.get('players') : [];
+  if(players.length == 0) {
+    store.set('players', players);
+  }
   return store.get('players');
 }
 

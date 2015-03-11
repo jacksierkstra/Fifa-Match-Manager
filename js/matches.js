@@ -31,7 +31,11 @@ function removeMatch(id)
 }
 
 function getMatches() {
-  return store.get('matches') ? store.get('matches') : [];
+  var matches = store.get('matches') ? store.get('matches') : [];
+  if(matches.length == 0) {
+    store.set('matches', matches);
+  }
+  return store.get('matches');
 }
 
 function updateMatchTable(table)
