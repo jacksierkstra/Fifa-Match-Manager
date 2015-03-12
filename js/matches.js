@@ -41,7 +41,7 @@ function getMatches() {
 function updateMatchTable(table)
 {
 
-  var matches = getMatches();
+  var matches = getMatches().reverse();
   var tableBody = $(table).find('tbody');
   tableBody.empty();
 
@@ -54,13 +54,27 @@ function updateMatchTable(table)
 
   $.each(matches, function() {
 
+    var playerThatWon = {};
+
+    if(this.awayTeamScore > this.homeTeamScore) {
+        playerThatWon = getPlayer(this.awayTeamPlayer).playerName;
+    }
+
+    if(this.awayTeamScore < this.homeTeamScore) {
+        playerThatWon = getPlayer(this.homeTeamPlayer).playerName;
+    }
+
+    if(this.awayTeamScore == this.homeTeamScore) {
+      playerThatWon = "Nobody won, it was a draw.";
+    }
+
     var row = $('<tr>')
       .append($('<td>').text(this.id))
       .append($('<td>').text(this.homeTeamName))
       .append($('<td>').text(this.awayTeamName))
       .append($('<td>').text(this.homeTeamScore))
       .append($('<td>').text(this.awayTeamScore))
-      .append($('<td>').text(''))
+      .append($('<td>').text(playerThatWon))
       .append($('<td>').append($('<button>').addClass('btn btn-default').addClass('remove-match').attr('aria-label', 'remove').attr('id', this.id).text('Remove')));
     row.appendTo(tableBody);
 

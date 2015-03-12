@@ -36,6 +36,5 @@
   },
   "_source": "git://github.com/tuupola/jquery_chained.git",
   "_target": "~1.0.0",
-  "_originalSource": "chained",
-  "_direct": true
+  "_originalSource": "chained"
 }

@@ -28,7 +28,7 @@ var substringMatcher = function(strs) {
 
 function initAutoCompleteBoxes() {
 
-  $('#homeTeamName').typeahead({
+    $('#homeTeamName').typeahead({
       hint: true,
       highlight: true,
       minLength: 1
