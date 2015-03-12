@@ -35,84 +35,101 @@
 
       <div class="panel panel-default">
           <div class="panel-body">
-            <form class="form-horizontal" id="addMatchForm">
+
+            <ul class="nav nav-pills">
+                <li class="active"><a data-toggle="tab" href="#addMatchForm">Add a new match</a></li>
+                <li><a data-toggle="tab" href="#statistics">Statistics</a></li>
+            </ul>
+            <hr>
+      <div class="tab-content">
+        <div id="addMatchForm" class="tab-pane fade in active">
+          <form class="form-horizontal" id="addMatchForm">
 
 
-                <div class="col-md-5">
+              <div class="col-md-5">
 
-                  <!-- Select Basic -->
-                  <div class="form-group">
+                <!-- Select Basic -->
+                <div class="form-group">
 
-                    <div class="col-md-8 col-md-offset-3">
-                      <select id="selectHomeTeam" name="homeTeamPlayer" class="form-control">
+                  <div class="col-md-8 col-md-offset-3">
+                    <select id="selectHomeTeam" name="homeTeamPlayer" class="form-control">
 
-                      </select>
-                    </div>
+                    </select>
                   </div>
-
-                  <!-- Text input-->
-                  <div class="form-group">
-
-                    <div class="col-md-8 col-md-offset-3">
-                    <input id="homeTeamName" name="homeTeamName" type="text" placeholder="The home team's name" class="form-control input-md">
-                    </div>
-                  </div>
-
-
-
-                  <div class="form-group">
-
-                    <div class="col-md-8 col-md-offset-3">
-                    <input id="textinput" name="homeTeamScore" type="text" placeholder="The home team's score" class="form-control input-md">
-                    </div>
-                  </div>
-
                 </div>
 
-                <div class="col-md-2">
-                  <h1 class="text-center">VS</h1>
-                  <button type="submit" id="addMatch" class="btn btn-xs btn-primary">Add match</button>
-                  <button type="button" id="resetForm" class="btn btn-xs btn-default">Reset form</button>
-                </div>
+                <!-- Text input-->
+                <div class="form-group">
 
-                <div class="col-md-5">
-
-                  <!-- Select Basic -->
-                  <div class="form-group">
-                    <div class="col-md-8 col-md-offset-1">
-                      <select id="selectAwayTeam" name="awayTeamPlayer" class="form-control">
-                      </select>
-                    </div>
-
-
-                  </div>
-
-                  <!-- Text input-->
-                  <div class="form-group">
-                    <div class="col-md-8 col-md-offset-1">
-                    <input id="awayTeamName" name="awayTeamName" type="text" placeholder="The away team's name" class="form-control input-md">
-                    </div>
-
-
-                  </div>
-
-                  <div class="form-group">
-                    <div class="col-md-8 col-md-offset-1">
-                    <input id="textinput" name="awayTeamScore" type="text" placeholder="The away team's score" class="form-control input-md">
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="col-md-12">
-                  <div class="col-md-4 col-md-offset-4">
-
+                  <div class="col-md-8 col-md-offset-3">
+                  <input id="homeTeamName" name="homeTeamName" type="text" placeholder="The home team's name" class="form-control input-md">
                   </div>
                 </div>
 
 
 
-              </form>
+                <div class="form-group">
+
+                  <div class="col-md-8 col-md-offset-3">
+                  <input id="textinput" name="homeTeamScore" type="text" placeholder="The home team's score" class="form-control input-md">
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-md-2">
+                <h1 class="text-center">VS</h1>
+                <button type="submit" id="addMatch" class="btn btn-xs btn-primary">Add match</button>
+                <button type="button" id="resetForm" class="btn btn-xs btn-default">Reset form</button>
+              </div>
+
+              <div class="col-md-5">
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                  <div class="col-md-8 col-md-offset-1">
+                    <select id="selectAwayTeam" name="awayTeamPlayer" class="form-control">
+                    </select>
+                  </div>
+
+
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <div class="col-md-8 col-md-offset-1">
+                  <input id="awayTeamName" name="awayTeamName" type="text" placeholder="The away team's name" class="form-control input-md">
+                  </div>
+
+
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-8 col-md-offset-1">
+                  <input id="textinput" name="awayTeamScore" type="text" placeholder="The away team's score" class="form-control input-md">
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-md-12">
+                <div class="col-md-4 col-md-offset-4">
+
+                </div>
+              </div>
+
+
+
+            </form>
+        </div>
+        <div id="statistics" class="tab-pane fade">
+            <h3>Under construction</h3>
+            <p>This part has to be constructed yet.</p>
+        </div>
+    </div>
+
+
+
           </div>
     </div>
 

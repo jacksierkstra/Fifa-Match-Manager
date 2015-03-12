@@ -20,6 +20,16 @@ function getPlayers() {
   return store.get('players');
 }
 
+function getPlayer(id) {
+  var players = store.get('players');
+  var player = {};
+  $.each(players, function() {
+    if(id == this.id)
+      player = this;
+  });
+  return player;
+}
+
 function removePlayer(id) {
 
   var players = [];
@@ -66,9 +76,26 @@ function updatePlayersTable(table)
 }
 
 function initPlayers(dropdown1, dropdown2) {
+
   var players = getPlayers();
+
+  if(players.length == 0) {
+    dropdown1.append($('<option>').text('No players found').attr('value', 0)).prop('disabled', true);
+    dropdown2.append($('<option>').text('No players found').attr('value', 0)).prop('disabled', true);
+    return;
+  }
+
+  if(players.length == 1) {
+    dropdown1.append($('<option>').text(players[0].playerName).attr('value', this.id));
+    dropdown2.append($('<option>').text('Please add more players').attr('value', 0));
+    return;
+  }
+
   $.each(players, function() {
       dropdown1.append($('<option>').text(this.playerName).attr('value', this.id));
       dropdown2.append($('<option>').text(this.playerName).attr('value', this.id));
   });
+
+  dropdown2.val(players[1].id);
+
 }
